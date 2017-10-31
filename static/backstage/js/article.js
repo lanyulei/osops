@@ -1,3 +1,4 @@
+
 layui.use(['layer', 'form', 'table', 'common'], function() {
 	var $ = layui.$,
 		layer = layui.layer,
@@ -16,7 +17,7 @@ layui.use(['layer', 'form', 'table', 'common'], function() {
 				field: 'id',
 				width: 60,
 				title: 'ID',
-				sort: true,
+				sort: true
 			}, {
 				field: 'title',
 				width: 400,
@@ -27,12 +28,12 @@ layui.use(['layer', 'form', 'table', 'common'], function() {
 				field: 'chanel',
 				width: 120,
 				title: '所属栏目',
-				align: 'center',
+				align: 'center'
 			}, {
 				field: 'autor',
 				width: 120,
 				title: '作者',
-				align: 'center',
+				align: 'center'
 			}, {
 				field: 'status',
 				width: 150,
@@ -43,12 +44,12 @@ layui.use(['layer', 'form', 'table', 'common'], function() {
 				field: 'sendtime',
 				width: 150,
 				title: '发布时间',
-				align: 'center',
+				align: 'center'
 			}, {
 				field: 'pubtime',
 				width: 150,
 				title: '审核时间',
-				align: 'center',
+				align: 'center'
 			}, {
 				title: '常用操作',
 				width: 200,
@@ -58,9 +59,9 @@ layui.use(['layer', 'form', 'table', 'common'], function() {
 			}]
 
 		],
-		url: '../../datas/article.json',
+		url: '/static/backstage/datas/article.json',
 		page: true,
-		even: true,
+		even: true
 
 	});
 
@@ -86,16 +87,16 @@ layui.use(['layer', 'form', 'table', 'common'], function() {
           active[type] ? active[type].call(this) : '';
 	});
 
-	var active = {
-        add:function(){
-           common.larryCmsMessage('最近好累，还是过段时间在写吧！','error');
-        },
-        edit:function(){
-           common.larryCmsMessage('最近好累，还是过段时间在写吧！','error');
-        },
-        del:function(){
-           common.larryCmsMessage('最近好累，还是过段时间在写吧！','error');
-        }
-
-	};
+	// var active = {
+     //    add:function(){
+     //       common.larryCmsMessage('最近好累，还是过段时间在写吧！','error');
+     //    },
+     //    edit:function(){
+     //       common.larryCmsMessage('最近好累，还是过段时间在写吧！','error');
+     //    },
+     //    del:function(){
+     //       common.larryCmsMessage('最近好累，还是过段时间在写吧！','error');
+     //    }
+    //
+	// };
 });

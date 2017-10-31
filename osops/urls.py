@@ -17,10 +17,12 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from app.layout import urls as layout_urls
 from app.index import urls as index_urls
+from app.host import urls as host_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^$', include(layout_urls)),
     url(r'^index/', include(index_urls)),
+    url(r'^host/', include(host_urls)),
 ]

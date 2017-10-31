@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>主机列表</title>
+	<meta name="keywords" content="" />
+    <meta name="description" content="LarryCMS Version:1.09" />
+	<meta name="Author" content="larry" />
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="Shortcut Icon" href="/static/favicon.ico" />
+	<!-- load css -->
+	<link rel="stylesheet" type="text/css" href="/static/common/frame/layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/static/common/css/gobal.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/static/common/css/animate.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/static/backstage/css/common.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/static/backstage/css/article.css" media="all">
+</head>
+<body>
+<div class="layui-fluid larry-wrapper animated">
+    <blockquote class="layui-elem-quote larry-btn">
+        <div class="layui-inline">
+            <div class="layui-input-inline" style="margin-right: -5px">
+                <input type="text" name="search" value="" id="search_input" placeholder="请输入IP地址进行搜索" class="layui-input larry-search-input">
+            </div>
+            <a class="layui-btn search_btn" data-type="getSelect">搜索</a>
+        </div>
+        <div class="layui-inline">
+            <a class="layui-btn layui-bg-blue" data-type="add">添加主机</a>
+        </div>
+        <div class="layui-inline">
+            <a class="layui-btn layui-bg-pale" data-type="tuijian">导入主机</a>
+        </div>
+        <div class="layui-inline">
+            <a class="layui-btn" data-type="shenhe">导出主机</a>
+        </div>
+        <div class="layui-inline">
+            <a class="layui-btn layui-btn-danger" data-type="del">批量删除</a>
+        </div>
+    </blockquote>
+
+    <div class="layui-col-lg12 layui-col-md12 layui-col-sm12 layui-col-xs12">
+    	<div class="user-tables">
+            <table id="article" lay-filter="articles"></table>
+    	</div>
+    </div>
+</div>
+
+<script type="text/html" id="articleBar">
+  <a class="layui-btn layui-btn-normal layui-btn-mini" lay-event="yulan">预览</a>
+  <a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
+  <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
+</script>
+<script type="text/html" id="titleTpl">
+  <a href="{{d.title}}" class="layui-table-link" target="_blank">{{ d.title}}</a>
+</script>
+
+<!-- 加载js文件 -->
+<script type="text/javascript" src="/static/common/frame/layui/layui.js"></script>
+<script type="text/javascript" src="/static/backstage/js/common.js"></script>
+<script type="text/javascript" src="/static/backstage/js/article.js"></script>
+
+</body>
+</html>
