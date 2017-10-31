@@ -45,24 +45,92 @@
 
     <div class="layui-col-lg12 layui-col-md12 layui-col-sm12 layui-col-xs12">
     	<div class="user-tables">
-            <table id="article" lay-filter="articles"></table>
+
+            <div class="layui-form">
+              <table class="layui-table">
+                <colgroup>
+                  <col width="150">
+                  <col width="150">
+                  <col width="200">
+                  <col>
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>人物</th>
+                    <th>民族</th>
+                    <th>出场时间</th>
+                    <th>格言</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>贤心</td>
+                    <td>汉族</td>
+                    <td>1989-10-14</td>
+                    <td>人生似修行</td>
+                  </tr>
+                  <tr>
+                    <td>张爱玲</td>
+                    <td>汉族</td>
+                    <td>1920-09-30</td>
+                    <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
+                  </tr>
+                  <tr>
+                    <td>Helen Keller</td>
+                    <td>拉丁美裔</td>
+                    <td>1880-06-27</td>
+                    <td> Life is either a daring adventure or nothing.</td>
+                  </tr>
+                  <tr>
+                    <td>岳飞</td>
+                    <td>汉族</td>
+                    <td>1103-北宋崇宁二年</td>
+                    <td>教科书再滥改，也抹不去“民族英雄”的事实</td>
+                  </tr>
+                  <tr>
+                    <td>孟子</td>
+                    <td>华夏族（汉族）</td>
+                    <td>公元前-372年</td>
+                    <td>猿强，则国强。国强，则猿更强！ </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="demo7" style="float: right;"></div>
+
     	</div>
     </div>
 </div>
 
-<script type="text/html" id="articleBar">
-  <a class="layui-btn layui-btn-normal layui-btn-mini" lay-event="yulan">预览</a>
-  <a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
-  <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
-</script>
-<script type="text/html" id="titleTpl">
-  <a href="{{d.title}}" class="layui-table-link" target="_blank">{{ d.title}}</a>
-</script>
+{#<script type="text/html" id="articleBar">#}
+{#  <a class="layui-btn layui-btn-normal layui-btn-mini" lay-event="yulan">预览</a>#}
+{#  <a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>#}
+{#  <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>#}
+{#</script>#}
 
 <!-- 加载js文件 -->
 <script type="text/javascript" src="/static/common/frame/layui/layui.js"></script>
 <script type="text/javascript" src="/static/backstage/js/common.js"></script>
-<script type="text/javascript" src="/static/backstage/js/article.js"></script>
+{#<script type="text/javascript" src="/static/backstage/js/article.js"></script>#}
+
+<script>
+layui.use(['laypage', 'layer'], function(){
+  var laypage = layui.laypage
+  ,layer = layui.layer;
+
+  //完整功能
+  laypage.render({
+    elem: 'demo7'
+    ,count: 100
+    ,layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+    ,jump: function(obj){
+      console.log(obj.curr)
+    }
+  });
+
+});
+</script>
 
 </body>
 </html>
