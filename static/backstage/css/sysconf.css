@@ -1,0 +1,214 @@
+html{
+	height: 100%;
+	width: 100%;
+}
+body{
+	background: #F1F2F7;
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+.larry-wrapper{
+	margin: 15px;
+	padding: 0px;
+	border-radius: 3px;
+	background: #ffffff;
+    border: 1px solid #F1F2F7;
+    box-shadow: 0px 1px 1px #F1F2F7;
+}
+.larry-body{
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+}
+.larry-body .larry-body-header{
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px solid #EEEFF1;
+	padding:0 20px;
+}
+.larry-body .larry-body-header span.tit{
+	line-height: 50px;
+	font-size: 18px;
+	color: #333333;
+	font-family: "Microsoft YaHei";
+	font-weight: 500;
+	text-align: left;
+	padding-left: 0px;
+}
+.larry-body .larry-body-content{
+	padding: 20px;
+	padding-right: 40px;
+}
+.inline-block{
+	margin-right: 5px;
+}
+.larry-form-tit{
+	display: inline-block;
+	width: calc(100% - 460px);
+	width: -moz-calc(100%-460px);
+	width: -webkit-calc(100%-460px);
+	float: right;
+	height: 35px;
+}
+.larry-classify{
+	width: 300px;
+	height: 35px;
+	float: right;
+	margin-right: 20px;
+}
+.larry-classify .layui-form-label{
+	color: #000000;
+	width: 90px;
+	padding:7.5px 15px;
+}
+.larry-classify .layui-unselect{
+    width: 150px;
+	height: 35px;
+}
+.larry-search{
+	float: right;
+	width: 210px;
+	height: 35px;
+}
+.larry-search .layui-unselect{
+	width: 210px;
+	height: 35px;
+}
+.larry-form-tit .layui-unselect input{
+	color: #333333;
+	font-size: 14px;
+}
+
+
+.larry-table-list{
+	width: 100%;
+	height: auto;
+	padding: 0px;
+}
+.larry-table-list .layui-table{
+	padding: 0px;
+	margin: 0px;
+}
+.larry-table-list .layui-table thead tr th:nth-child(5),
+.larry-table-list .layui-table thead tr th:nth-child(6),
+.larry-table-list .layui-table thead tr th:nth-child(7){
+	text-align: center;
+}
+.larry-table-list .layui-table thead tr th:last-child{
+	text-align: center;
+}
+.larry-table-list .layui-table tbody tr td:nth-child(5),
+.larry-table-list .layui-table tbody tr td:nth-child(6),
+.larry-table-list .layui-table tbody tr td:nth-child(7){
+	text-align: center;
+}
+.larry-table-list .layui-table tbody tr td:last-child{
+	text-align: center;
+}   
+.larry-table-list .layui-table tbody tr td a.layui-btn{
+	height: 24px !important;
+	line-height: 24px !important;
+	font-size: 12px;
+	padding: 0px 8px;
+}
+.larry-table-list .layui-table tbody tr td a.layui-btn-small{
+	height: 24px !important;
+	line-height: 24px !important;
+	font-size: 12px;
+	padding: 0px 8px;
+}
+.larry-table-list .layui-table tbody tr td a.layui-btn-normal{
+	height: 24px !important;
+	line-height: 24px !important;
+	font-size: 12px;
+	padding: 0px 8px;
+}
+.larry-table-list .layui-table tbody tr td a.layui-btn-danger{
+	height: 24px !important;
+	line-height: 24px !important;
+	font-size: 12px;
+	padding: 0px 8px;
+}
+.larry-table-list .layui-table tbody tr td a.layui-btn i.larry-icon{
+	height: 20px !important;
+	line-height: 20px !important;
+	font-size: 12px;
+}
+.page{
+	margin-top: 10px;
+}
+
+
+/**编辑页面*/*/
+/*.larry-conf-box{
+	background: #ffffff;
+}*/
+.larry-conf{
+/*background: #E2DFDF;	*/
+background: #dddddd;
+}
+.larry-conf-page{
+	padding-left: 60px;
+	
+}
+.larry-conf-page .layui-form-item{
+	width: 100%;
+	font-family: "Microsoft YaHei";
+}
+.larry-conf-page .layui-form-item label{
+	display: inline-block;
+	vertical-align: top;
+	width: 100px;
+	text-align: left;
+	height: 36px;
+	line-height: 36px;
+	padding: 0px;
+	padding-right: 5px;
+    font-size: 14px;
+    color: #666666;
+}
+.larry-conf-page .layui-form-item .layui-input-block{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 5px;
+	width: 360px;
+	height: 35px;
+	line-height: 35px;
+}
+.larry-conf-page .layui-form-item .layui-input-block .layui-unselect{
+	height: 36px;
+	line-height: 36px;
+}
+.larry-conf-page .layui-form-item .layui-input-block .layui-form-switch{
+	height: 20px;
+	line-height: 20px;
+	margin-top: 0px;
+}
+.larry-conf-page .layui-form-item span.larry-conf-remark{
+	display: inline-block;
+	vertical-align: top;
+	height: 36px;
+	line-height: 36px;
+	color: #999999;
+	text-align: left;
+	font-size: 14px;
+	padding-left: 20px;
+}
+.larry-conf-page .layui-form-text{
+	height: 100px;
+	line-height: 25px;
+	margin-bottom: 15px;
+}
+.larry-conf-page .layui-form-text .layui-textarea{
+	height: 100px;
+}
+.larry-btn-ctrl{
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+.larry-btn-ctrl .layui-btn{
+	padding-left: 25px;
+	padding-right: 25px;
+}

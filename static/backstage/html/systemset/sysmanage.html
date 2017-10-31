@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>系统配置管理</title>
+	<meta name="keywords" content="" />
+    <meta name="description" content="LarryCMS Version:1.09" />
+	<meta name="Author" content="larry" />
+	<meta name="renderer" content="webkit">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">	
+	<meta name="apple-mobile-web-app-capable" content="yes">	
+	<meta name="format-detection" content="telephone=no">	
+	<link rel="Shortcut Icon" href="/favicon.ico" />
+	<!-- load css -->
+	<link rel="stylesheet" type="text/css" href="../../../common/frame/layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../../common/css/gobal.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../../common/css/animate.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../css/sysconf.css" media="all">
+</head>
+</head>
+<body>
+<div class="larry-fluid larry-wrapper animated fadeInRightBig">
+    <div class="layui-row lay-col-space15 ">
+    	<div class="layui-cos-xs12 layui-col-sm12 layui-col-md12 layui-col-lg12">
+    		<section class="larry-body">
+    			<div class="larry-body-header">
+    				<span class="tit">LarryCMS系统配置管理 ：</span>
+    			</div>
+    			<div class="larry-body-content clearfix">
+                    <div class="larrycms-btn-box">
+		    	        <div class="larry-add-edit layui-btn inline-block" data-url="/admin/conf/add.html"><i data-icon="larry-xinjian" class="larry-icon inline-block">&#xe6dc;</i>新增</div>
+		    	        <div class="larry-add-edit layui-btn layui-btn-warm inline-block" data-url="/admin/conf/edit.html"><i class="larry-icon inline-block">&#xe77d;</i>编辑</div>
+		    	        <div class="layui-btn layui-btn-danger ajax-get inline-block" data-url="/admin/conf/del.html"><i class="ajax-get larry-icon inline-block">&#xe6a5;</i>删除</div>
+		    	        <div class="layui-btn layui-btn-normal inline-block" data-url="/admin/conf/srot.html"><i class="larry-icon inline-block">&#xe7f4;</i>排序</div>
+		    	
+		    	        <form action="" class="layui-form larry-form-tit clearfix inline-block">
+		    		        <div class="larry-search">
+		    			        <div class="layui-input-inline">
+		    				        <select name="configname" lay-verify="" lay-search="">
+		    					            <option value="">请输入配置名称或下拉选择</option>
+		    				                <option value="1">配置分组</option>
+                                            <option value="2">站点根网址</option>
+                                            <option value="3">主页链接名</option>
+                                            <option value="4">网站名称</option>
+                                            <option value="5">文档HTML默认保存路径</option>
+                                            <option value="6">图片/上传文件默认路径</option>
+                                            <option value="7">网站模板默认主题</option>
+                                            <option value="8">网站版权信息</option>
+                     		    	</select>
+		    			        </div>
+		    		        </div>
+		    		        <div class="larry-classify">
+		    			        <div class="layui-input-inline">
+		    		        <label class="layui-form-label">配置分组</label>
+                            <div class="layui-input-inline">
+                                <select name="conf_group">
+                                    <option value="" selected="">请选择配置分组</option>
+                                   
+                                    <option value="all">全部分组</option>
+                      
+                                    <option value="">tes</option>
+                 
+                                </select>
+                            </div>
+		    		            </div>
+		    		        </div>
+		    	        </form>
+		            </div>
+    		</section>
+        </div>
+        <div class="layui-cos-xs12 layui-col-sm12 layui-col-md12 layui-col-lg12">
+    		<section class="larry-body">
+
+    			<div class="larry-body-content clearfix">
+                   
+		    	<div class="layui-form larry-table-list">
+		    	<table class="layui-table" lay-even="" lay-skin="line">
+		    		<colgroup>
+                      <col width="3%">
+                      <col width="6%">
+                      <col>
+                      <col>
+                      <col width="10%">
+                      <col width="12%">
+                      <col width="10%">
+                      <col width="10%">
+                      <col width="20%">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th><input class="check-all" type="checkbox" name="checkAll" lay-skin="primary" lay-filter="allChoose"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></th>
+                        <th>ID</th>
+                        <th>名称</th>
+                        <th>配置标题</th>
+                        <th>默认值</th>
+                        <th>可选值</th>
+                        <th>分组</th>
+                        <th>当前状态</th>
+                        <th>操作</th>
+                      </tr> 
+                    </thead>
+                    <tbody>
+                     
+                      <tr>
+                        <td><input class="ids" type="checkbox" name="" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></td>
+                        <td>1</td>
+                        <td><a href="/admin/conf/edit/id/1.html" target="_self">cfg_group_list</a></td>
+                        <td>配置分组</td>
+                        <td>未定义</td>
+                        <td>未定义</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>
+                            <a data-url="/admin/conf/edit/id/1.html" target="_self" class="larry-add-edit ajax-get layui-btn layui-btn-small layui-btn-normal larry-add-edit">
+                              <i class="larry-icon larry-bianji4"></i>编辑
+                            </a>
+                            <a data-url="/admin/conf/del/id/1.html" data-confirm="确定要删除？" target="_self" class="ajax-get layui-btn layui-btn-small layui-btn-danger">
+                              <i class="larry-icon larry-ttpodicon"></i>删除
+                            </a>
+                        </td>
+                      </tr>
+                       
+                      <tr>
+                        <td><input class="ids" type="checkbox" name="" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></td>
+                        <td>2</td>
+                        <td><a href="/admin/conf/edit/id/2.html" target="_self">cfg_basehost</a></td>
+                        <td>站点根网址</td>
+                        <td>未定义</td>
+                        <td>未定义</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>
+                            <a data-url="/admin/conf/edit/id/2.html" target="_self" class="larry-add-edit ajax-get layui-btn layui-btn-small layui-btn-normal larry-add-edit">
+                              <i class="larry-icon larry-bianji4"></i>编辑
+                            </a>
+                            <a data-url="/admin/conf/del/id/2.html" data-confirm="确定要删除？" target="_self" class="ajax-get layui-btn layui-btn-small layui-btn-danger">
+                              <i class="larry-icon larry-ttpodicon"></i>删除
+                            </a>
+                        </td>
+                      </tr>
+                       
+                      <tr>
+                        <td><input class="ids" type="checkbox" name="" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></td>
+                        <td>3</td>
+                        <td><a href="/admin/conf/edit/id/3.html" target="_self">cfg_indexname</a></td>
+                        <td>主页链接名</td>
+                        <td>未定义</td>
+                        <td>未定义</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>
+                            <a data-url="/admin/conf/edit/id/3.html" target="_self" class="larry-add-edit ajax-get layui-btn layui-btn-small layui-btn-normal larry-add-edit">
+                              <i class="larry-icon larry-bianji4"></i>编辑
+                            </a>
+                            <a data-url="/admin/conf/del/id/3.html" data-confirm="确定要删除？" target="_self" class="ajax-get layui-btn layui-btn-small layui-btn-danger">
+                              <i class="larry-icon larry-ttpodicon"></i>删除
+                            </a>
+                        </td>
+                      </tr>
+                       
+                      <tr>
+                        <td><input class="ids" type="checkbox" name="" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></td>
+                        <td>4</td>
+                        <td><a href="/admin/conf/edit/id/4.html" target="_self">cfg_webname</a></td>
+                        <td>网站名称</td>
+                        <td>未定义</td>
+                        <td>未定义</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>
+                            <a data-url="/admin/conf/edit/id/4.html" target="_self" class="larry-add-edit ajax-get layui-btn layui-btn-small layui-btn-normal larry-add-edit">
+                              <i class="larry-icon larry-bianji4"></i>编辑
+                            </a>
+                            <a data-url="/admin/conf/del/id/4.html" data-confirm="确定要删除？" target="_self" class="ajax-get layui-btn layui-btn-small layui-btn-danger">
+                              <i class="larry-icon larry-ttpodicon"></i>删除
+                            </a>
+                        </td>
+                      </tr>
+                       
+                      <tr>
+                        <td><input class="ids" type="checkbox" name="" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></td>
+                        <td>5</td>
+                        <td><a href="/admin/conf/edit/id/5.html" target="_self">cfg_arcdir</a></td>
+                        <td>文档HTML默认保存路径</td>
+                        <td> /article</td>
+                        <td>未定义</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>
+                            <a data-url="/admin/conf/edit/id/5.html" target="_self" class="larry-add-edit ajax-get layui-btn layui-btn-small layui-btn-normal larry-add-edit">
+                              <i class="larry-icon larry-bianji4"></i>编辑
+                            </a>
+                            <a data-url="/admin/conf/del/id/5.html" data-confirm="确定要删除？" target="_self" class="ajax-get layui-btn layui-btn-small layui-btn-danger">
+                              <i class="larry-icon larry-ttpodicon"></i>删除
+                            </a>
+                        </td>
+                      </tr>
+                       
+                      <tr>
+                        <td><input class="ids" type="checkbox" name="" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></td>
+                        <td>6</td>
+                        <td><a href="/admin/conf/edit/id/6.html" target="_self">cfg_medias_dir</a></td>
+                        <td>图片/上传文件默认路径</td>
+                        <td> /static/uploads</td>
+                        <td>未定义</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>
+                            <a data-url="/admin/conf/edit/id/6.html" target="_self" class="larry-add-edit ajax-get layui-btn layui-btn-small layui-btn-normal larry-add-edit">
+                              <i class="larry-icon larry-bianji4"></i>编辑
+                            </a>
+                            <a data-url="/admin/conf/del/id/6.html" data-confirm="确定要删除？" target="_self" class="ajax-get layui-btn layui-btn-small layui-btn-danger">
+                              <i class="larry-icon larry-ttpodicon"></i>删除
+                            </a>
+                        </td>
+                      </tr>
+                       
+                      <tr>
+                        <td><input class="ids" type="checkbox" name="" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></td>
+                        <td>7</td>
+                        <td><a href="/admin/conf/edit/id/7.html" target="_self">cfg_website_style</a></td>
+                        <td>网站模板默认主题</td>
+                        <td> default</td>
+                        <td>未定义</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>
+                            <a data-url="/admin/conf/edit/id/7.html" target="_self" class="larry-add-edit ajax-get layui-btn layui-btn-small layui-btn-normal larry-add-edit">
+                              <i class="larry-icon larry-bianji4"></i>编辑
+                            </a>
+                            <a data-url="/admin/conf/del/id/7.html" data-confirm="确定要删除？" target="_self" class="ajax-get layui-btn layui-btn-small layui-btn-danger">
+                              <i class="larry-icon larry-ttpodicon"></i>删除
+                            </a>
+                        </td>
+                      </tr>
+                       
+                      <tr>
+                        <td><input class="ids" type="checkbox" name="" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></td>
+                        <td>8</td>
+                        <td><a href="/admin/conf/edit/id/8.html" target="_self">cfg_powerby</a></td>
+                        <td>网站版权信息</td>
+                        <td>未定义</td>
+                        <td>未定义</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>
+                            <a data-url="/admin/conf/edit/id/8.html" target="_self" class="larry-add-edit ajax-get layui-btn layui-btn-small layui-btn-normal larry-add-edit">
+                              <i class="larry-icon larry-bianji4"></i>编辑
+                            </a>
+                            <a data-url="/admin/conf/del/id/8.html" data-confirm="确定要删除？" target="_self" class="ajax-get layui-btn layui-btn-small layui-btn-danger">
+                              <i class="larry-icon larry-ttpodicon"></i>删除
+                            </a>
+                        </td>
+                      </tr>
+                                          </tbody>
+		    	        </table>
+		            </div>
+    			</div>
+    		</section>
+        </div>
+    </div>
+</div>
+<!-- 加载js文件 -->
+<script type="text/javascript" src="../../../common/frame/layui/layui.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/article.js"></script> 
+</body>
+</html>

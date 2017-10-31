@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户管理</title>
+	<meta name="keywords" content="" />
+    <meta name="description" content="LarryCMS Version:1.09" />
+	<meta name="Author" content="larry" />
+	<meta name="renderer" content="webkit">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">	
+	<meta name="apple-mobile-web-app-capable" content="yes">	
+	<meta name="format-detection" content="telephone=no">	
+	<link rel="Shortcut Icon" href="/favicon.ico" />
+	<!-- load css -->
+	<link rel="stylesheet" type="text/css" href="/common/frame/layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../../common/css/gobal.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../../common/css/animate.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../css/article.css" media="all">
+</head>
+</head>
+<body>
+<div class="layui-fluid larry-wrapper animated rotateIn">
+    <blockquote class="layui-elem-quote larry-btn">
+        <div class="layui-inline">
+            <div class="layui-input-inline">
+                <input type="text" name="search" value="" id="search_input" placeholder="请输入文章标题进行查询" class="layui-input larry-search-input">
+            </div>
+            <a class="layui-btn search_btn" data-type="getSelect">查询</a>
+        </div>
+        <div class="layui-inline">
+            <a class="layui-btn layui-bg-blue" data-type="add">添加文档</a>
+        </div>
+        <div class="layui-inline">
+            <a class="layui-btn layui-bg-pale" data-type="tuijian">推荐文章</a>
+        </div>
+        <div class="layui-inline">
+            <a class="layui-btn" data-type="shenhe">审核文档</a>
+        </div>
+        <div class="layui-inline">
+            <a class="layui-btn layui-btn-danger" data-type="del">批量删除</a>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-form-mid layui-word-aux">因时间仓促，本页面先占个坑，新版发布后 开始系统子页逐个更新，毕竟后台基础框架已完成，望大家见谅！(一个人业余时间写太累了)</div>
+        </div>
+    </blockquote>
+
+    <div class="layui-col-lg12 layui-col-md12 layui-col-sm12 layui-col-xs12">
+    	<div class="user-tables">
+    		<table id="article" lay-filter="articles"></table>
+    	</div>
+    </div>
+</div>
+
+<script type="text/html" id="articleBar">
+  <a class="layui-btn layui-btn-normal layui-btn-mini" lay-event="yulan">预览</a>
+  <a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
+  <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
+</script>
+<script type="text/html" id="titleTpl">
+  <a href="{{d.title}}" class="layui-table-link" target="_blank">{{ d.title}}</a>
+</script>
+<script type="text/html" id="statusTpl">
+  {{#  if(d.status === '待审核'){ }}
+      <span class="warm">待审核</span>
+  {{#  } else if(d.status === '审核通过'){ }}
+     <span class="green">审核通过</span>
+  {{#  } else { }}
+     <span class="red">审核未通过</span>
+  {{#  } }}
+</script>
+<!-- 加载js文件 -->
+<script type="text/javascript" src="../../../common/frame/layui/layui.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/article.js"></script> 
+</body>
+</html>

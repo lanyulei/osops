@@ -1,0 +1,46 @@
+{
+	"code": 0,
+	"msg": "",
+	"count": 1000,
+	"data": [{
+		"id": 1,
+		"username": "larry",
+		"group":"超级管理员",
+		"phone":"18627820000",
+		"status":"启用",
+		"lastip":"127.0.0.1",
+		"lasttime":"2017-08-26"
+	}, {
+		"id": 2,
+		"username": "admin",
+		"group":"系统管理员",
+		"phone":"18627820000",
+		"status":"启用",
+		"lastip":"127.0.0.1",
+		"lasttime":"2017-08-26"
+	}, {
+		"id": 3,
+		"username": "channel",
+		"group":"频道管理员",
+		"phone":"18627820000",
+		"status":"禁用",
+		"lastip":"127.0.0.1",
+		"lasttime":"2017-08-26"
+	},{
+		"id": 4,
+		"username": "info",
+		"group":"信息发布员",
+		"phone":"18627820000",
+		"status":"禁用",
+		"lastip":"127.0.0.1",
+		"lasttime":"2017-08-26"
+	},{
+		"id": 5,
+		"username": "test",
+		"group":"测试员",
+		"phone":"18627820000",
+		"status":"启用",
+		"lastip":"127.0.0.1",
+		"lasttime":"2017-08-26"
+	}]
+}

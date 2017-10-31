@@ -1,0 +1,70 @@
+html{
+	height: 100%;
+	width: 100%;
+}
+body{
+	background: #F1F2F7;
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+.larry-wrapper{
+	margin: 15px;
+	padding: 0px;
+	border-radius: 3px;
+	background: #ffffff;
+    border: 1px solid #F1F2F7;
+    box-shadow: 0px 1px 1px #F1F2F7;
+}
+.larry-body{
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+}
+.larry-body .larry-body-header{
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px solid #EEEFF1;
+	padding:0 20px;
+	padding-left: 30px;
+}
+.larry-body .larry-body-header span.tit{
+	line-height: 50px;
+	font-size: 16px;
+	color: #666666;
+	font-weight: 300;
+}
+.larry-body .larry-body-content{
+	padding: 20px;
+	padding-right: 40px;
+}
+
+.layui-form .layui-form-item label.layui-form-label{
+	width: 120px;
+	font-family: "Microsoft YaHei";
+}
+.layui-input-block{
+	margin-left: 160px;
+	width: auto;
+}
+.layui-disabled{
+	background: #EEEEEE;
+	color: #595963 !important;
+}
+.layui-disabled:hover{
+	color: #595963 !important;
+}
+.layui-input-block textarea{
+	height: 90px;
+}
+/* 修改密码 */
+.larry-body .changepwd{
+	padding-bottom: 60px;
+}
+.larry-body-content .change-submit{
+	padding-top: 20px;
+}
+.larry-body-content .change-submit .larry-tj{
+	margin-right: 20px;
+}

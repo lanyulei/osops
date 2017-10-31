@@ -1,0 +1,23 @@
+.larry-search-input{
+	padding-right: 15px;
+}
+.layui-input-inline{
+	margin-right: 5px;
+}
+.layui-inline{
+	margin-right: 5px;
+}
+.flinkTable{
+	padding-top: 0px;
+}
+.flinkTable .layui-table{
+	margin: 0px;
+	height: 0px;
+	padding: 0px;
+}
+.flinkTable .layui-table-view{
+	margin-top: 5px;
+}
+.layui-table-fixed-l tr{
+	background: #ffffff;
+}
