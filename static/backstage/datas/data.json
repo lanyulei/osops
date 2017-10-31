@@ -13,6 +13,21 @@
 		"url": "main.html",
 		"spread": false
 	}, {
+		"id": "5",
+		"pid": "0",
+		"title": "用户管理",
+		"icon": "&#xe8a4;",
+		"url": "",
+		"spread": false,
+		"children": [{
+			"id": "6",
+			"pid": "0",
+			"title": "用户列表",
+			"icon": "&#xea3c;",
+			"url": "/user/list/",
+			"spread": false
+		}]
+	}, {
 		"id": "3",
 		"pid": "0",
 		"title": "主机管理",
@@ -27,5 +42,6 @@
 			"url": "/host/list/",
 			"spread": false
 		}]
-	}]
+	}
+	]
 }]

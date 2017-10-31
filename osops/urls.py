@@ -18,11 +18,18 @@ from django.contrib import admin
 from app.layout import urls as layout_urls
 from app.index import urls as index_urls
 from app.host import urls as host_urls
+from app.userprofile import urls as user_urls
+from app.userprofile import views as user_views
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    url(r'^$', include(layout_urls)),
+    url(r'^accounts/login/', user_views.LoginHandler, name='login'),
+    url(r'^accounts/logout/', user_views.LogoutHandler, name='logout'),
+
+    url(r'', include(layout_urls)),
     url(r'^index/', include(index_urls)),
     url(r'^host/', include(host_urls)),
+    url(r'^user/', include(user_urls)),
 ]

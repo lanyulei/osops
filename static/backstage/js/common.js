@@ -68,9 +68,9 @@ layui.use(['jquery','layer','element','common','larryMenu','form'],function(){
 		    }
 		}],
 		[{
-			text: "访问larryCMS官网",
+			text: "访问作者博客",
 			func: function() {
-				window.open('http://www.larrycms.com');
+				window.open('http://fdevops.com');
 			}
 		}]
 	];

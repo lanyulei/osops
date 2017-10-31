@@ -207,7 +207,7 @@ layui.use(['jquery','larryElem','layer','common','form','larryMenu','larryTab'],
 	});
 	// 登出系统
 	$('#logout').on('click',function(){
-		var url ='login.html';
+		var url ='/accounts/logout/';
 		console.log(url);
 		common.logOut('退出登陆提示！','你真的确定要退出系统吗？',url);
 	});
@@ -257,16 +257,11 @@ layui.use(['jquery','larryElem','layer','common','form','larryMenu','larryTab'],
 					}
 				}]
 			]
-		}, {
-			text: "去给LarryCMS点赞",
-		    func: function() {
-		    	window.open('http://fly.layui.com/case/u/109200');
-		    }
 		}],
 		[{
-			text: "访问larryCMS官网",
+			text: "访问作者博客",
 			func: function() {
-				window.open('http://www.larrycms.com');
+				window.open('http://fdevops.com');
 			}
 		}]
 	];

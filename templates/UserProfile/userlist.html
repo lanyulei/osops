@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>主机列表</title>
+	<meta name="keywords" content="" />
+    <meta name="description" content="LarryCMS Version:1.09" />
+	<meta name="Author" content="larry" />
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="Shortcut Icon" href="/static/favicon.ico" />
+	<!-- load css -->
+	<link rel="stylesheet" type="text/css" href="/static/common/frame/layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/static/common/css/gobal.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/static/common/css/animate.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/static/backstage/css/common.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/static/backstage/css/article.css" media="all">
+
+    <link href="/static/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="/static/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <!-- Data Tables -->
+    <link href="/static/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+    <link href="/static/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
+</head>
+<body>
+    <div class="layui-fluid larry-wrapper animated">
+        <blockquote class="layui-elem-quote larry-btn">
+{#            <div class="layui-inline">#}
+{#                <div class="layui-input-inline" style="margin-right: -5px">#}
+{#                    <input type="text" name="search" value="" id="search_input" placeholder="请输入IP地址进行搜索" class="layui-input larry-search-input">#}
+{#                </div>#}
+{#                <a class="layui-btn search_btn" data-type="getSelect">搜索</a>#}
+{#            </div>#}
+            <div class="layui-inline">
+                <a class="layui-btn layui-bg-blue" data-type="add">添加用户</a>
+            </div>
+            <div class="layui-inline">
+                <a class="layui-btn layui-btn-danger" data-type="del">批量删除</a>
+            </div>
+        </blockquote>
+
+        <div class="layui-col-lg12 layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="user-tables">
+
+                <div class="ibox float-e-margins" style="border: 1px solid #e7eaec;">
+
+                    <div class="ibox-content" style="border-style: none">
+
+                        <table class="table table-striped table-bordered table-hover dataTables-example">
+                            <thead>
+                                <tr>
+                                    <th>用户名</th>
+                                    <th>邮箱</th>
+                                    <th>是否可用</th>
+                                    <th>是否管理</th>
+                                    <th>最近登录时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for user_obj in userlist %}
+                                    <tr>
+                                        <td>{{ user_obj.username }}</td>
+                                        <td>{{ user_obj.email }}</td>
+                                        <td>{{ user_obj.is_active }}</td>
+                                        <td>{{ user_obj.is_superuser }}</td>
+                                        <td>{{ user_obj.last_login | date:"Y-m-d H:i:s"}}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {#<script type="text/html" id="articleBar">#}
+    {#  <a class="layui-btn layui-btn-normal layui-btn-mini" lay-event="yulan">预览</a>#}
+    {#  <a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>#}
+    {#  <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>#}
+    {#</script>#}
+
+    <!-- 加载js文件 -->
+    <script type="text/javascript" src="/static/common/frame/layui/layui.js"></script>
+    <script type="text/javascript" src="/static/backstage/js/common.js"></script>
+    {#<script type="text/javascript" src="/static/backstage/js/article.js"></script>#}
+
+    <script src="/static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/static/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="/static/js/jquery.dataTables.js"></script>
+    <script src="/static/js/dataTables.bootstrap.js"></script>
+    <script src="/static/js/content.min.js?v=1.0.0"></script>
+    <script>
+        $(document).ready(function(){
+            $(".dataTables-example").dataTable();
+        })
+    </script>
+
+</body>
+</html>
