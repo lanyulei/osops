@@ -53,7 +53,7 @@ class Migration(migrations.Migration):
                 ('default', models.BinaryField()),
                 ('deleted', models.BooleanField(default=False)),
                 ('timestamp', models.DateTimeField(db_index=True)),
-                ('field', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='host.Field')),
+                ('field', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.assets.Field')),
             ],
             options={
                 'db_table': 'field_history',
@@ -63,8 +63,8 @@ class Migration(migrations.Migration):
             name='Relationship',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('source', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='source_id', to='host.Field')),
-                ('target', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='target_id', to='host.Field')),
+                ('source', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='source_id', to='app.assets.Field')),
+                ('target', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='target_id', to='app.assets.Field')),
             ],
             options={
                 'db_table': 'relationship',
@@ -87,8 +87,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('value', models.BinaryField()),
-                ('entity', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='host.Entity')),
-                ('field', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='host.Field')),
+                ('entity', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.assets.Entity')),
+                ('field', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.assets.Field')),
             ],
             options={
                 'db_table': 'value',
@@ -101,8 +101,8 @@ class Migration(migrations.Migration):
                 ('value', models.BinaryField()),
                 ('timestamp', models.DateTimeField(db_index=True)),
                 ('deleted', models.BooleanField(default=False)),
-                ('entity', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='host.Entity')),
-                ('field', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='host.Field')),
+                ('entity', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.assets.Entity')),
+                ('field', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.assets.Field')),
             ],
             options={
                 'db_table': 'value_history',
@@ -111,16 +111,16 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='fieldhistory',
             name='schema',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='host.Schema'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.assets.Schema'),
         ),
         migrations.AddField(
             model_name='field',
             name='schema',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='host.Schema'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.assets.Schema'),
         ),
         migrations.AddField(
             model_name='entity',
             name='schema',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='host.Schema'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.assets.Schema'),
         ),
     ]

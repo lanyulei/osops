@@ -5,4 +5,4 @@ from django.apps import AppConfig
 
 
 class HostConfig(AppConfig):
-    name = 'app.host'
+    name = 'app.assets'

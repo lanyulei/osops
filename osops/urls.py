@@ -17,8 +17,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from app.userprofile import views as user_views
 
-from app.host import urls as host_urls
-# from app.host.rest import urls as rest_urls
+from app.assets import urls as host_urls
+# from app.assets.rest import urls as rest_urls
 from app.index import urls as index_urls
 from app.layout import urls as layout_urls
 from app.userprofile import urls as user_urls
@@ -33,7 +33,7 @@ urlpatterns = [
 
     url(r'', include(layout_urls)),
     url(r'^index/', include(index_urls)),
-    url(r'^host/', include(host_urls)),
+    url(r'^assets/', include(host_urls)),
     url(r'^user/', include(user_urls)),
     # url(r'^api/', include(rest_urls)),
 ]

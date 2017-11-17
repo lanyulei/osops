@@ -6,7 +6,7 @@
 # @Software: PyCharm
 
 from django.conf.urls import url
-from app.host import views
+from app.assets import views
 
 urlpatterns = [
     url(r'^list/', views.HostListHandler, name='list'),

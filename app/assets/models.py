@@ -7,6 +7,7 @@
 
 from django.db import models
 
+
 class Schema(models.Model):
     name = models.CharField(max_length=45, unique=True)
     display = models.CharField(max_length=45, unique=True)
@@ -14,6 +15,7 @@ class Schema(models.Model):
 
     class Meta:
         db_table = "schema"
+
 
 class Field(models.Model):
     ''' 字段表 '''
@@ -37,6 +39,7 @@ class Field(models.Model):
 
     class Meta:
         db_table = "field"
+
 
 class FieldHistory(models.Model):
     schema = models.ForeignKey(Schema)
@@ -62,6 +65,7 @@ class FieldHistory(models.Model):
     class Meta:
         db_table = "field_history"
 
+
 class Relationship(models.Model):
     ''' 关系表 '''
 
@@ -71,12 +75,14 @@ class Relationship(models.Model):
     class Meta:
         db_table = "relationship"
 
+
 class Entity(models.Model):
 
     schema = models.ForeignKey(Schema)
 
     class Meta:
         db_table = "entity"
+
 
 class Value(models.Model):
 
@@ -87,6 +93,7 @@ class Value(models.Model):
 
     class Meta:
         db_table = 'value'
+
 
 class ValueHistory(models.Model):
 

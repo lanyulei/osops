@@ -9,4 +9,4 @@ import json
 
 @login_required
 def HostListHandler(request):
-    return render(request, 'Host/list.html')
+    return render(request, 'Assets/list.html')
