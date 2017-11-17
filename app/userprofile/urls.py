@@ -6,6 +6,7 @@
 # @Software: PyCharm
 
 from django.conf.urls import url
+
 from app.userprofile import views
 
 urlpatterns = [

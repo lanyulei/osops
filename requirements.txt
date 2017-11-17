@@ -1,0 +1,6 @@
+psutil
+netifaces
+djangorestframework
+markdown
+django-filter
+requests

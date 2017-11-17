@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, HttpResponse, HttpResponseRedirect
-from app.userprofile import models
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-import json
+from django.shortcuts import render, HttpResponseRedirect
+from app.userprofile import models
 
 # Create your views here.
 
@@ -31,7 +30,7 @@ def LogoutHandler(request):
 @login_required
 def UserListHandler(request):
 
-    userlist = User.objects.all().values()
+    userlist = models.UserProfile.objects.all().values()
 
     return render(request, 'UserProfile/userlist.html', {
         'userlist': userlist

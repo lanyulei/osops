@@ -25,7 +25,7 @@ SECRET_KEY = '_agx-vw$@tmccr$#h0d(6o-rb*)gl5o3w=5y4l_g7r$0^mie9('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'app.index',
     'app.host',
     'app.userprofile',
+    # 'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -122,6 +123,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+TOKEN_TIMEOUT = 120
+
+AUTH_USER_MODEL = 'userprofile.UserProfile'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
