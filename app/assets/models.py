@@ -24,13 +24,13 @@ class Field(models.Model):
     name = models.CharField(max_length=45, unique=True)
     display = models.CharField(max_length=45, unique=True)
     type_choice = (
-        ('TYPE_INT', 0),
-        ('TYPE_FLOAT', 1),
-        ('TYPE_STRING', 2),
-        ('TYPE_DATETIME', 3),
-        ('TYPE_IP', 4),
+        ('int', 'int'),
+        ('float', 'float'),
+        ('string', 'string'),
+        ('datetime', 'datetime'),
+        ('ip', 'ip'),
     )
-    type = models.IntegerField(choices=type_choice, default=2)
+    type = models.CharField(max_length=45 ,choices=type_choice, default='string')
     required = models.BooleanField(default=True)
     multi = models.BooleanField(default=False)
     unique = models.BooleanField(default=False)
@@ -39,6 +39,10 @@ class Field(models.Model):
 
     class Meta:
         db_table = "field"
+        unique_together = [  # 联合唯一
+            ('schema', 'name'),
+            ('schema', 'display'),
+        ]
 
 
 class FieldHistory(models.Model):

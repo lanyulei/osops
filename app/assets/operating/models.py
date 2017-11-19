@@ -31,9 +31,29 @@ class SchemaService:
             raise e
 
     @staticmethod
-    def add_field(schema_id):
+    def add_field(schema_id, **data):
         ''' 添加field '''
-        pass
+        try:
+            if data.get('type') not in dict(models.Field.type_choice).keys():
+                data['type'] = 'string'
+
+            if data.get('required', False):
+                pass
+
+            if data.get('default') is not None:
+                pass
+
+            field = models.Field.objects.create({
+                'name': data['name'],
+                'display': data.get('display', data.get('name')),
+                'type': data.get('type'),
+                'required': data.get('required', False),
+                'multi': data.get('multi', False),
+                'unique': data.get('unique', False),
+                'default': data.get('default'),
+            })
+        except Exception as e:
+            raise e
 
     @staticmethod
     def remove_field(schema_id):

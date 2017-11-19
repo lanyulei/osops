@@ -1,0 +1,13 @@
+{
+  "type": {
+    "name": "cmdb.types.Int",
+    "options": {
+      "max": 100,
+      "min": 10
+    }
+  },
+  "nullable": false,
+  "unique": false,
+  "multi": false
+
+}
