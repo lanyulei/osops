@@ -10,6 +10,7 @@
   "nullable": false,
   "unique": false,
   "multi": false,
+  "default": "",
   "reference": {
     /* 外键引用 ， 一个字段只能引用到一个表 */
     "schema": "",

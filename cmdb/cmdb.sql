@@ -75,3 +75,45 @@ SELECT COUNT(`id`) AS `count` FROM `value` WHERE `field_id` = 1 AND `value` = ?;
 -- 更新target数据 --
 -- 1. `if cascade` 拿新值在source表上做验证，如果验证通过，更新，如果验证不通过，target更新失败。
 -- 2. `if disable` 如果source表有值，target表更新失败。
+
+SELECT * FROM `field` WHERE `reference` = ?;
+
+/* ----------------------------------- 结构的变更 ----------------------------------- */
+-- 结构变更中，数据类型禁止修改
+
+-- nullable is true || (default is not null && unique is false)
+-- reference 是否满足
+-- 遍历entry给添加的字段set这个default值
+
+-- * 删除字段 --
+-- 唯一需要校验reference， 看是否被引用， 如果被引用则校验失败，否则校验成功设置为删除
+-- 逻辑删除 当校验通过的时候，deleted设置为true则是删除数据，其他的不需要操作
+
+-- * 修改字段 -- 
+-- 主要是meta字段的修改
+--   nullable的修改: false -> true 可以直接修改，true -> false，需要校验，校验现存的entry是否都满足
+     -- select count(id) as `count` from `value` where `field_id` = ? and `entry_id` = ?;  -- 等于0则校验失败   慢
+
+--   unique的修改: true -> false 直接修改即可， false -> true 需要校验，
+     -- select count(id) as `count` from `value` where `field_id` = ?;
+     -- select count(distinct `value`) as `count` from `value` where `field_id` = ?;  -- 如果这连个count是相等的则校验通过，反之则校验失败  慢
+     
+--   multi的修改: false -> true 直接修改即可， true -> false 需要校验数据
+     -- select count(id) as `count` from `value` where `field_id` = ? and `entry_id` = ?;   -- 任何一个的count大于1的时候校验失败
+      
+--   删除reference: 直接删除即可，无需校验
+
+--   增加reference: 需要校验，确定是否满足reference
+     -- select count(s.id) as `count` from `value` as s, `value` as t where s.`value` != t.`value` and s.`field_id` = ? and t.`field_id` = ?;  -- 如果count大于0则说明校验么有通过，如果count等于0的话，则校验成功
+
+
+
+
+
+
+
+
+
+
+
+
