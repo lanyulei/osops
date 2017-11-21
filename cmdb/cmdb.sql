@@ -1,23 +1,26 @@
-/* ----------------------------------- 创建host的数据结构 ----------------------------------- */
+/* ----------------------------------- 创建host的数据结构(表) ----------------------------------- */
 INSERT INTO `schema`(`name`) VALUE(`host`);
 
 /* ----------------------------------- 创建类字段 ----------------------------------- */
 INSERT INTO `field`(`name`, `meta`, `schema_id`) VALUE('hostname', '', 1);
 INSERT INTO `field`(`name`, `meta`, `schema_id`) VALUE('ipaddress', '', 1);
+INSERT INTO `field`(`name`, `meta`, `schema_id`) VALUE('ipaddress', '', 1);
+
 
 /* ----------------------------------- 查询数据结构 ----------------------------------- */
 SELECT `schema`.`name` AS `schema`, `field`.* FROM `schema`, `field` WHERE `schema`.id = `field`.`schema_id` AND `schema`.`name` = 'host';
 
 /* ----------------------------------- 插入数据 ----------------------------------- */
-INSERT INTO `entry`(`key`, `schema_id`) VALUE('57e533310373422897114c37d21f0f35', 1); -- 表示一条数据 --
+INSERT INTO `entry`(`key`, `schema_id`) VALUE('57e533310373422897114c37d21f0f37', 1); -- 表示一条数据 --
 
-INSERT INTO `value`(`entry_id`, `field_id`, `value`) VALUE(6,1,'cmdb.lanyulei.com'); -- 表示每个字段的值 --
-INSERT INTO `value`(`entry_id`, `field_id`, `value`) VALUE(6,2,'10.1.1.1'); -- 表示每个字段的值 --
+INSERT INTO `value`(`entry_id`, `field_id`, `value`) VALUE(3,1,'cmdb.lanyulei.com'); -- 表示每个字段的值 --
+INSERT INTO `value`(`entry_id`, `field_id`, `value`) VALUE(3,2,'10.1.1.1'); -- 表示每个字段的值 --
 
 /* ----------------------------------- 数据的查询 ----------------------------------- */
 SELECT `field`.`id` FROM `schema`, `field` WHERE `schema`.id = `field`.`schema_id` AND `schema`.`name` = 'host' AND `field`.`name` = 'ip';
 SELECT `entry_id` FROM `value` WHERE `field_id` = 2 AND `value` = '10.1.1.1';
 SELECT `field`.`name` AS `name`, `value`.`value` AS `value` FROM `value`, `field` WHERE `entry_id` = 1 AND `value`.`field_id` = `field`.`id`; 
+SELECT `field`.`name` AS `name`, `value`.`value` AS `value`, `value`.`entry_id` AS `entry` FROM `value`, `field` WHERE `value`.`field_id` = `field`.`id`; 
 
 /* ----------------------------------- unique ----------------------------------- */
 SELECT `id` FROM `schema` WHERE `name` = 'host';
