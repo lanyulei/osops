@@ -1,7 +1,8 @@
 {
   "type": {
     "name": "cmdb.types.Int",
-    "options": {  /* 类型判断的参数 */
+    "options": {
+      /* 类型判断的参数 */
       "max": 100,
       "min": 10
     }
@@ -9,7 +10,8 @@
   "nullable": false,
   "unique": false,
   "multi": false,
-  "reference": { /* 外键引用 ， 一个字段只能引用到一个表 */
+  "reference": {
+    /* 外键引用 ， 一个字段只能引用到一个表 */
     "schema": "",
     "field": "",
     "on_delete": "cascade|set_null|disable",
