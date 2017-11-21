@@ -66,9 +66,9 @@ SELECT `field`.`id` FROM `field`, `schema` WHERE `schema`.id = `field`.`schema_i
 SELECT COUNT(`id`) AS `count` FROM `value` WHERE `field_id` = 1 AND `value` = ?; -- 如果小于等于0则校验不通过，大于0则校验通过 --
 
 -- 删除target数据 --
-1. 对field表做一次遍历，找出这个字段被那些表引用
-2. 根据被删除的值，查找source，删除对应的数据
+-- 1. 对field表做一次遍历，找出这个字段被那些表引用
+-- 2. 根据被删除的值，查找source，删除对应的数据
 
 -- 更新target数据 --
-1. `if cascade` 拿新值在source表上做验证，如果验证通过，更新，如果验证不通过，target更新失败。
-2. `if disable` 如果source表有值，target表更新失败。
+-- 1. `if cascade` 拿新值在source表上做验证，如果验证通过，更新，如果验证不通过，target更新失败。
+-- 2. `if disable` 如果source表有值，target表更新失败。
